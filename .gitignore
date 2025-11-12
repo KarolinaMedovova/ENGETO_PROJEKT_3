@@ -12,3 +12,6 @@ __pycache__/
 .idea/
 
 # Ignoruj konkrétní moje pomocné soubory
+zk.py
+cookies.py
+T1.py

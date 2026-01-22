@@ -1,17 +1,38 @@
-# Ignoruj cache
+# Ignoruj Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 **/cache/
+
+# Pytest cache
+.pytest_cache/
+
+# Playwright
+playwright-report/
+test-results/
+playwright/.cache/
+
+# Virtual environment
+venv/
+.env/
 
 # Ignoruj logy a zálohy
 *.log
 *.bak
 
-# Ignoruj nastavení editoru
+# Ignoruj nastavení editoru VS Code
 .vscode/
 .idea/
+
+
+# OS files
+.DS_Store
+Thumbs.db
 
 # Ignoruj konkrétní moje pomocné soubory
 zk.py
 cookies.py
 T1.py
+puvodni_kody.py
+test_alza.py

@@ -1,6 +1,4 @@
 import pytest
-#from dotenv import load_dotenv
-#load_dotenv()
 from test_saucedemo import login
 
 

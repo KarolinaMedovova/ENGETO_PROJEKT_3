@@ -1,16 +1,52 @@
-Projekt: Tři automatizované testy
+Automatizované testy pomocí frameworku Playwright
 
-Zadání
-Napište tři automatizované testy pomocí frameworku Playwright.
-
-
-Postup
-Vyberte si libovolnou webovou stránku, kterou chcete otestovat. (např. Engeto.cz).
-Vytvořte soubor Python (.py), ve kterém napíšete tři automatizované testy pro danou stránku.
-Pro zjednodušení psaní testů importujte do projektu plugin pytest-playwright.
+Tento projekt obsahuje tři automatizované testy vytvořené pomocí frameworku Playwright a knihovny pytest-playwright.
+Testy jsou napsané v jazyce Python a ověřují funkčnost webové aplikace saucedemo.com.
 
 
-Pokud si nejste jisti, neváhejte se obrátit na lektora :-)
+Zadání projektu:
+- Vybrat libovolnou webovou stránku.
+- Vytvořit tři automatizované testy pomocí Playwrightu.
+- Použít plugin pytest-playwright.
 
 
-P.S. Pokud se někdo cítí jistěji v jiném programovacím jazyce, může ho použít. Jedinou podmínkou je použití frameworku Playwright.
+Použité technologie: 
+- Python
+- Playwright
+- pytest
+- pytest-playwright plugin
+
+
+Spouštění testů:
+Testy se spouští v kořenové složce projektu příkazem pytest, anebo s viditelným prohlížečem příkazem pytest --headed.
+
+
+Popis testů:
+Projekt obsahuje více než tři testy — součástí je i kompletní E2E scénář a negativní testy.
+Pozitivní testy:
+- Zobrazení titulku
+- Přihlášení uživatele
+- Ověření zobrazení produktů
+- Řazení ve filtru podle ceny lo-hi
+- Přidání produktů do košíku
+- Pokračování v nákupu
+- Kontrola obsahu košíku
+- Checkout
+- Checkout - vyplnění údajů adresáta
+- Dokončení objednávky (E2E test)
+- Odhlášení uživatele
+
+Negativní testy:
+- Neplatné přihlášení
+- Neplatné vyplnění údajů v checkoutu
+
+
+Screenshoty:
+Ve složce 'screenshots' jsou uloženy:
+- tests_passed.png – výsledek běhu testů  
+- project_structure.png – struktura projektu  
+- code_example.png – ukázka části kódu  
+
+
+Autor:
+Karolina Medovová

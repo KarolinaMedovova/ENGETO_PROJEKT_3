@@ -187,7 +187,7 @@ def test_select_price_lohi(logged_in_page):
     select_price_lohi(logged_in_page)
 
 
-# Test pro přidání produktu Backpack do košíku:   
+# Test pro přidání produktů do košíku:   
 def test_add_item_to_cart(logged_in_page):
     add_item_to_cart(logged_in_page, 4)
     expect(logged_in_page.locator(".cart_item")).to_have_count(1)

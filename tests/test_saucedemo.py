@@ -40,7 +40,7 @@ def login(page):
 def verify_products_page(page):
     expect(page).to_have_url(INVENTORY_URL)
     product_names = page.locator(".inventory_item_name")
-    expect(product_names).to_have_count(6)                   # to have count ověřuje i to, že jsou prvky viditelné, tudíž není potřeba ověřovat pomocí .to_be_visible()
+    expect(product_names).to_have_count(6)
     product_prices = page.locator(".inventory_item_price")
     expect(product_prices).to_have_count(6)
     button_add_to_cart = page.get_by_role("button", name = "Add to cart")
@@ -71,12 +71,6 @@ def continue_shopping(page):
     continue_shopping_button.click()
     expect(page).to_have_url(INVENTORY_URL)
 
-"""
-# Funkce pro kontrolu obsahu košíku:
-def control_cart(page, name):
-    expect(page).to_have_url(CART_URL)
-    expect(page.get_by_text(f"{name}")).to_be_visible()
-"""
 
 # Funkce pro kontrolu produktů v košíku: 
 def control_products_in_cart(page, products):
@@ -143,7 +137,6 @@ def login_neg(page):
     login.click()
     expect(page).to_have_url(BASE_URL)
     expect(page.locator("[data-test=\"error\"]")).to_be_visible()
-    #expect(page.get_by_text("Epic sadface: Username and password do not match any user in this service")).to_be_visible()
 
 
 # Funkce pro chybně vyplněné údaje k nákupu:
@@ -156,10 +149,8 @@ def fill_checkout_info_neg(page):
     zip.fill("")
     button_continue = page.get_by_role("button", name = "Continue")
     button_continue.click()
-    #print(page.url)
     expect(page).to_have_url(CHECKOUT_STEP_ONE_URL)
     expect(page.locator("[data-test='error']")).to_be_visible()
-    #expect(page.get_by_text("Error: Postal Code is required")).to_be_visible()
  
 
 #----------------------------------------------------------------------------------------------
@@ -197,12 +188,6 @@ def test_continue_shopping(logged_in_page):
     add_item_to_cart(logged_in_page, 4)
     continue_shopping(logged_in_page)
 
-"""
-# Test pro kontolu obsahu košíku: 
-def test_control_cart(logged_in_page):
-    add_item_to_cart(logged_in_page, 2)
-    control_cart(logged_in_page, "Sauce Labs Onesie")
-"""
 
 # Test pro kontrolu produktů v košíku:
 def test_control_products_in_cart(logged_in_page):
@@ -278,4 +263,3 @@ def test_fill_checkout_info_neg(logged_in_page):
     control_products_in_cart(logged_in_page, products)
     checkout(logged_in_page)
     fill_checkout_info_neg(logged_in_page)
-    #logged_in_page.pause()
